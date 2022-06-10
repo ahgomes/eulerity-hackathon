@@ -1,38 +1,97 @@
 .App {
-  text-align: center;
+    position: absolute;
+    top: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2, p {
+    margin: 10px 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.top-head a {
+    text-decoration: none;
+    color: #000;
+}
+
+.top-head a:hover {
+    color: #888;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    box-sizing: border-box;
+    z-index: 1000;
 }
 
-.App-link {
-  color: #61dafb;
+.App-header .top-head a h1 {
+    text-transform: uppercase;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-header .top-head {
+    border-bottom: 1px solid #888;
+    width: 100%;
+}
+
+.App-header .top-head > * {
+    display: inline-block;
+    height: 30px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.App-header .top-head nav a {
+    font-size: 12px;
+    margin: 0 10px;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+main {
+    margin: 150px auto;
+}
+
+.options-section > * {
+    display: inline-block;
+    margin: 10px;
+}
+
+.wrapper {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.selected::after {
+    content: "selected";
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    padding: 20px;
+    box-sizing: border-box;
+    width: calc(100% - 10px);
+    height: calc(100% - 20px);
+    background: rgba(182, 181, 24, 0.57);
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: right;
+}
+
+footer {
+    position: fixed;
+    bottom: -100px;
+    width: 100%;
+    padding: 20px;
+    background: #fff;
+    border-top: 1px solid #888;
+    box-sizing: border-box;
+    z-index: 1000;
+    text-align: right;
+    transition: bottom 400ms ease-in-out;
+}
+
+footer.to-download {
+    bottom: 0;
 }
